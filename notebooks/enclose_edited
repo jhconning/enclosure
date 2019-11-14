@@ -36,7 +36,7 @@ def weq(te, th=1, alp=1/2, tlbar=1):
 
 def req(te, th=1, alp=1/2, tlbar=1):
     lam = (th*alp)**(1/(1-alp))
-    return (1-alp)*th * lam**alp * (1-te+lam*te)**(-alp) * (tlbar)**(-alp)
+    return (1-alp)*th * (1-te+lam*te)**(-alp) * (tlbar)**(-alp)
 
 def le(te, th, alp):
     lam = (th*alp)**(1/(1-alp))
