@@ -43,7 +43,8 @@ def le(te, th, alp):
     return lam*te/(1-te+lam*te)
  
 def totalq(te, th, alp):
-    '''total output in the economy given '''
+    '''total output in the economy given.
+       This is net output as costs of enclosure are not subtracted.'''
     leq = le(te, th, alp)
     return f(Tbar,Lbar,alp, th) * ( th*f(te, leq, alp, th) + f(1-te, 1-leq, alp, 1) )
 
@@ -52,7 +53,7 @@ def plotY(alp = 0.5, th = 1, c = 1):
     te = np.linspace(0, 1.0, 20)
     plt.title("total output as function of enclosure te")
     plt.plot(te, totalq(te, th, alp) - c*te*Tbar)
-    plt.xlabel('a')
+    plt.xlabel(r't_e')
     #plt.ylim(0,1.5)
 
 
